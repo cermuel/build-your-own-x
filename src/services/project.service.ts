@@ -51,6 +51,7 @@ export const getData = async (): Promise<{
   return { items: result, categories, languages };
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getCategories = (markdown: any) => {
   const categoryRegex = /#### Build your own `(.+?)`/g;
   const categories = new Set<string>();
