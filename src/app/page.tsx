@@ -1,7 +1,5 @@
 import { getData } from "@/services/project.service";
 import Navbar from "@/components/Navbar";
-import { PiCubeLight } from "react-icons/pi";
-import ProjectItem from "@/components/ProjectItem";
 import ProjectList from "@/components/ProjectList";
 
 export default async function Home() {
