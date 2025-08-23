@@ -20,20 +20,18 @@ export default function ProjectList({
   const [showCategories, setShowCategories] = useState(false);
   const [showLanguages, setShowLanguages] = useState(false);
 
+  const filteredByLang = items.filter((item) =>
+    selectedLanguage === ""
+      ? item.languages
+      : item.languages[0].toLowerCase() === selectedLanguage.toLowerCase()
+  );
   const filteredItems =
     selectedCategory === ""
-      ? items
-      : items
-          .filter(
-            (item) =>
-              item.category.toLowerCase() === selectedCategory.toLowerCase()
-          )
-          .filter((item) =>
-            selectedLanguage === ""
-              ? item.languages
-              : item.languages[0].toLowerCase() ===
-                selectedLanguage.toLowerCase()
-          );
+      ? filteredByLang
+      : filteredByLang.filter(
+          (item) =>
+            item.category.toLowerCase() === selectedCategory.toLowerCase()
+        );
 
   return (
     <div className="w-full flex flex-col items-center">
